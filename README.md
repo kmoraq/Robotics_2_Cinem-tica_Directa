@@ -5,6 +5,7 @@ Inicialmente se creó un script que publica los tópicos y llama al los servicio
  + W y S se utilizan para cambiar ascendentemente o descendentemente, respectivamente entre los eslabones.
  + D se utiliza para desplazarse a un punto definido por el grupo.
  + A se utiliza para volver a la posición de home.
+ 
 Para realizar la convención anterior se utilizó la función definida en el primer laboratorio “getKey()” y se utilizó una nueva función llamada”jointCommand()” que recibe como parámetros el id del eslabón que se va a mover, el parámetro a modificar que en este caso será la posición y el tiempo de pausa.
 
 [![Captura-de-pantalla-de-2022-05-13-17-09-49.png](https://i.postimg.cc/FRrhcsKy/Captura-de-pantalla-de-2022-05-13-17-09-49.png)](https://postimg.cc/JyFwC8Z0)
