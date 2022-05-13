@@ -137,6 +137,9 @@ Posición 5
 
 #### Conclusiones
 
+El modelo del robot en matlab es una buena aproximación a la cinemática del robot real como se muestra más adelante al verificar que la pose de la herramienta y de las articulaciones corresponde con las del robot real y su gemelo en rviz. Se podría hacer uso tambien de rigidbody para tener un acercamiento más acertado a la dimensiones reales de los eslabones y articulaciones del robot.
+
+Sería posible implementar una junta prismática que simule una de las dos pinzas del efector final y por simetía determinar la cinemática de la otra pinza, esto puede ser util en caso de tener encuenta la pieza de trabajo que se busca sujetar con el gripper
 
 ## Implementación con ROS en MatLab y comprobación con el ToolBox
 
