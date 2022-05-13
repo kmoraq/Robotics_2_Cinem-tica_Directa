@@ -24,7 +24,10 @@ El resultado se puede ver a continuación, en donde se inicia en el primer eslab
 
 VIDEO
 
-### Conclusión
+### Conclusiones 
+Como medida inicial antes de realizar cualquier proceso físico con los manipuladores, es necesario conocer los parámetros del robot, tales como sus posiciones límite, resoluciones y torques a lo que opera, esto con el fin de dar un buen uso y evitar movimientos bruscos.
+
+
 
 ## Creación del Robot con el ToolBox
 
