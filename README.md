@@ -1,6 +1,29 @@
 # Robotics_2_Cinemática_Directa
 
 ## Implementación con ROS en Python
+Inicialmente se creó un script que publica los tópicos y llama al los servicios correspondientes para mover las diferentes articulaciones del robot, se utilizaron las teclas W S D y A para controlar tanto qué articulación se estaba moviendo como a la posición a la que se quería llegar del siguiente modo:
+ + W y S se utilizan para cambiar ascendentemente o descendentemente, respectivamente entre los eslabones.
+ + D se utiliza para desplazarse a un punto definido por el grupo.
+ + A se utiliza para volver a la posición de home.
+Para realizar la convención anterior se utilizó la función definida en el primer laboratorio “getKey()” y se utilizó una nueva función llamada”jointCommand()” que recibe como parámetros el id del eslabón que se va a mover, el parámetro a modificar que en este caso será la posición y el tiempo de pausa.
+
+[![Captura-de-pantalla-de-2022-05-13-17-09-49.png](https://i.postimg.cc/FRrhcsKy/Captura-de-pantalla-de-2022-05-13-17-09-49.png)](https://postimg.cc/JyFwC8Z0)
+
+En el main realizamos if que cumplen las condiciones mencionadas anteriormente, y utilizando la función “jointCommand()” definimos en el condicional de la letra a las posiciones correspondientes a la posición de home.
+Y en el condicional de la letra d definimos las posiciones correspondientes a la escogida por el grupo.
+
+[![Captura-de-pantalla-de-2022-05-13-17-12-58.png](https://i.postimg.cc/Gp2ChggK/Captura-de-pantalla-de-2022-05-13-17-12-58.png)](https://postimg.cc/0zL3VnsK)
+
+Finalmente, para tener un modo de detener el procesos se hace un condicional con la letra x que cambiará el valor del while que realiza la lectura de las teclas repetidamente.
+
+
+AQUÍ VA LO QUE YA ESCRIBIÓ LUCHO CREO :V
+
+El resultado se puede ver a continuación, en donde se inicia en el primer eslabón llegando hasta el último modificando las posiciones para llegar a la postura definida y nuevamente se devuelve entre los eslabones volviendo a la posición de home.
+
+VIDEO
+
+### Conclusión
 
 ## Creación del Robot con el ToolBox
 
