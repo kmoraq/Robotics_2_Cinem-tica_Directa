@@ -29,6 +29,8 @@ Como medida inicial antes de realizar cualquier proceso físico con los manipula
 
 ## Creación del Robot con el ToolBox
 
+Con el fin de visualizar en el ToolBox el PhantomX se realiza el proceso de cinemática directa y se determinan  los parámetros DH
+
 ## Implementación con ROS en MatLab y comprobación con el ToolBox
 
 #### Conexión Con Matlab
