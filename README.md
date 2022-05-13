@@ -80,7 +80,38 @@ Como medida inicial antes de realizar cualquier proceso físico con los manipula
 
 ## Creación del Robot con el ToolBox
 
-Con el fin de visualizar en el ToolBox el PhantomX se realiza el proceso de cinemática directa y se determinan  los parámetros DH
+Se hallan los parámetros DH para el robot con base a las dimesiones proporciondas por el siguiente pano de ensamble.
+
+![](Pictures/Screenshot%20from%202022-05-13%2013-18-47.png){width="608"}
+
+Marcos de referencia según convención de DHstd.
+
+![](images/paste-0D58595D.png)
+
+![](Pictures/Screenshot%20from%202022-05-13%2013-48-56.png)
+
+```{matlab}
+clear L
+clear l
+l(1) = 89.45;
+l(2) = 105.95;
+l(3) = 100;
+l(4) = 107.6;
+
+L(1) = Link('revolute','alpha',pi/2,'a',0,   'd',l(1),'offset',0,   'qlim',[-3*pi/4 3*pi/4]);
+L(2) = Link('revolute','alpha',0,'a',l(2),   'd',0,'offset',atan(100/35),   'qlim',[-3*pi/4 3*pi/4]);
+L(3) = Link('revolute','alpha',0,'a',l(3),   'd',0,'offset',-atan(100/35),   'qlim',[-3*pi/4 3*pi/4]);
+L(4) = Link('revolute','alpha',0,'a',l(4),   'd',0,'offset',0,   'qlim',[-3*pi/4 3*pi/4]);
+PhantomX = SerialLink(L,'name','Px');
+
+PhantomX.tool = trotx(pi/2)*troty(pi/2);
+
+% Graficar robot
+PhantomX.plot([0 0 0 0],'notiles');
+hold on 
+PhantomX.teach()
+```
+
 
 ## Implementación con ROS en MatLab y comprobación con el ToolBox
 
