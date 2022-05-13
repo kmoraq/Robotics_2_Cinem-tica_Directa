@@ -20,9 +20,7 @@ Finalmente, para tener un modo de detener el procesos se hace un condicional con
 
 AQUÍ VA LO QUE YA ESCRIBIÓ LUCHO CREO :V
 
-El resultado se puede ver a continuación, en donde se inicia en el primer eslabón llegando hasta el último modificando las posiciones para llegar a la postura definida y nuevamente se devuelve entre los eslabones volviendo a la posición de home.
-
-VIDEO
+El resultado se puede ver a continuación, en donde se inicia en el primer eslabón llegando hasta el último modificando las posiciones para llegar a la postura definida y nuevamente se devuelve entre los eslabones volviendo a la posición de home: https://youtu.be/_Qfe3F-dehE
 
 ### Conclusiones 
 Como medida inicial antes de realizar cualquier proceso físico con los manipuladores, es necesario conocer los parámetros del robot, tales como sus posiciones límite, resoluciones y torques a lo que opera, esto con el fin de dar un buen uso y evitar movimientos bruscos.
@@ -91,6 +89,8 @@ Una vez creado el suscriptor se debe llamar el atributo LatestMessage y el atrib
 ```matlab
 Sub.LatestMessage.Position;
 ```
+Podemos ver el resultado de la conexión de MatLab+ROS+ToolBox en el siguiente video:
+https://youtu.be/pGyQpZdBjbY
 
 #### Conclusiones
 
