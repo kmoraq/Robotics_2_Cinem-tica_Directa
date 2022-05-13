@@ -18,7 +18,58 @@ Y en el condicional de la letra d definimos las posiciones correspondientes a la
 Finalmente, para tener un modo de detener el procesos se hace un condicional con la letra x que cambiará el valor del while que realiza la lectura de las teclas repetidamente.
 
 
-AQUÍ VA LO QUE YA ESCRIBIÓ LUCHO CREO :V
+**Implementación ROS Python.**
+
+**Actualización de los CAD y las mallas en rviz acorde el robot px100.**
+
+Para poder adecuar el entorno de rviz al robot px100 disponible en el laboratorio se optó por consultar las referencias de este robot en la pagina web que lo vende pues esta proporciona planos de ensamble del robot con las cotas necesarias para determianar su cinemática, así como un repositorio con las mallas para el px100 con las dimensiones reales.
+
+Luego de descargar los archivos .stl del robot estos se guardan en el directorio "meshes".
+
+Dentro del urdf se deben editar los archivos px.urdf, px_collision y px_transmision.
+
+Estos archivos tienen en su cuerpo la definición serial de cada eslabón y junta que posee el robot.
+
+Un link se define utilizando el siguiente bloque
+
+```python
+<link name="nombre_link">
+    
+</link>
+```
+
+Dentro de este bloque se debe especificar el archivo .stl de la malla del eslabón y la postura del marco de referencia del eslabón.
+
+El marco de referencia de el eslabón se describe con ángulos roll, picht, yaw y posición x,y,z con respecto al marco de referencia de la junta anterior a el.
+
+```python
+<visual name="">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://px_robot/meshes/px100_1_base.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+</visual>
+```
+
+El bloque de código que se muestra arriba va dentro del bloque \<link name\> ... \<link\> y prensenta la definición del origen con la sentencia \<origin xyz rpy\> y la geometría que se va a leer para la visulización dentro del bloque \<geometry\> ... \<geometry\>. El bloque \<visual name\> ... \<visual\> funciona para visualizar en rviz el modelo del eslabón con su marco de referencia.
+
+Seguido a cada link se coloca la definición de una junta, en el caso del link de base, este no necesita tener una junta que le preceda.
+
+Las juntas pueden ser definidas como sigue,
+
+```python
+  <joint name="world_fixed" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+```
+
+Dentro de su definición se especifica el tipo de junta, en este caso fija, su marco de referencia con respecto al de la junta anterior y tambien los links que debe unir.
+
+La herramienta puede ser definida utilizando un link vació y una junta fija que tenga la posición y la orientación del tcp. La siguiente figura ilustra el modelo visual en el rviz del robot px100.
+
+![](Pictures/Screenshot%20from%202022-05-13%2013-14-19.png)
 
 El resultado se puede ver a continuación, en donde se inicia en el primer eslabón llegando hasta el último modificando las posiciones para llegar a la postura definida y nuevamente se devuelve entre los eslabones volviendo a la posición de home: https://youtu.be/_Qfe3F-dehE
 
