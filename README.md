@@ -69,7 +69,7 @@ Dentro de su definición se especifica el tipo de junta, en este caso fija, su m
 
 La herramienta puede ser definida utilizando un link vació y una junta fija que tenga la posición y la orientación del tcp. La siguiente figura ilustra el modelo visual en el rviz del robot px100.
 
-![](Pictures/Screenshot%20from%202022-05-13%2013-14-19.png)
+[![Screenshot-from-2022-05-13-13-14-19.png](https://i.postimg.cc/13mJN8hR/Screenshot-from-2022-05-13-13-14-19.png)](https://postimg.cc/KRWn6v8C)
 
 El resultado se puede ver a continuación, en donde se inicia en el primer eslabón llegando hasta el último modificando las posiciones para llegar a la postura definida y nuevamente se devuelve entre los eslabones volviendo a la posición de home: https://youtu.be/_Qfe3F-dehE
 
@@ -82,13 +82,16 @@ Como medida inicial antes de realizar cualquier proceso físico con los manipula
 
 Se hallan los parámetros DH para el robot con base a las dimesiones proporciondas por el siguiente pano de ensamble.
 
-![](Pictures/Screenshot%20from%202022-05-13%2013-18-47.png){width="608"}
+[![Screenshot-from-2022-05-13-13-18-47.png](https://i.postimg.cc/FsXqWFc3/Screenshot-from-2022-05-13-13-18-47.png)](https://postimg.cc/PNK2NjS5)
 
 Marcos de referencia según convención de DHstd.
 
-![](images/paste-0D58595D.png)
+[![Screenshot-from-2022-05-13-18-07-32.png](https://i.postimg.cc/WzTGZyFF/Screenshot-from-2022-05-13-18-07-32.png)](https://postimg.cc/WFYqLX7T)
 
-![](Pictures/Screenshot%20from%202022-05-13%2013-48-56.png)
+Tabla de parámetros DHstd según los marcos mostrados anteriomente.
+
+[![Screenshot-from-2022-05-13-13-48-56.png](https://i.postimg.cc/bN05KXHM/Screenshot-from-2022-05-13-13-48-56.png)](https://postimg.cc/Cz1JqQ2H)
+
 
 ```{matlab}
 clear L
@@ -111,6 +114,28 @@ PhantomX.plot([0 0 0 0],'notiles');
 hold on 
 PhantomX.teach()
 ```
+
+Posición 1
+
+[![Screenshot-from-2022-05-12-19-47-38.png](https://i.postimg.cc/SQg2VRHt/Screenshot-from-2022-05-12-19-47-38.png)](https://postimg.cc/5jF2244w)
+
+Posición 2
+
+[![Screenshot-from-2022-05-12-19-45-40.png](https://i.postimg.cc/gk6zR0ph/Screenshot-from-2022-05-12-19-45-40.png)](https://postimg.cc/rKM22MKy)
+
+Posición 3
+
+[![Screenshot-from-2022-05-12-19-41-09.png](https://i.postimg.cc/KvLKbfRC/Screenshot-from-2022-05-12-19-41-09.png)](https://postimg.cc/mtLZNQ3S)
+
+Posición 4
+
+[![Screenshot-from-2022-05-12-19-36-17.png](https://i.postimg.cc/L8D84bRQ/Screenshot-from-2022-05-12-19-36-17.png)](https://postimg.cc/75CkmX5S)
+
+Posición 5
+
+[![Screenshot-from-2022-05-12-19-35-33.png](https://i.postimg.cc/pThWZVj3/Screenshot-from-2022-05-12-19-35-33.png)](https://postimg.cc/Q9DZN30q)
+
+#### Conclusiones
 
 
 ## Implementación con ROS en MatLab y comprobación con el ToolBox
